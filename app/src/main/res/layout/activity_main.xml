@@ -5,5 +5,30 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:id="@+id/TextView_get"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="24sp"
+        android:text="1"
+        />
+
+    <TextView
+        android:id="@+id/TextView_get2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/TextView_get"
+        android:textSize="24sp"
+        android:text="2"
+        />
+
+    <TextView
+        android:id="@+id/TextView_get3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/TextView_get2"
+        android:textSize="24sp"
+        android:text="3"
+        />
 
 </RelativeLayout>
