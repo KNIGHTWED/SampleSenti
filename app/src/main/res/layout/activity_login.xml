@@ -54,7 +54,6 @@
             android:orientation="horizontal"
             android:background="@drawable/btn_blue"
             android:paddingHorizontal="30dp"
-            android:clickable="true"
             android:layout_marginBottom="25dp"
             android:gravity="center">
 
