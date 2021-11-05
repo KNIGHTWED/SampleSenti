@@ -99,12 +99,12 @@
 
 
     <RelativeLayout
+        android:id="@+id/RelativeLayout_FB_Login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="@drawable/btn_darkblue"
         android:paddingHorizontal="30dp"
-        android:clickable="true"
         android:layout_marginBottom="40dp"
         android:gravity="center">
 
