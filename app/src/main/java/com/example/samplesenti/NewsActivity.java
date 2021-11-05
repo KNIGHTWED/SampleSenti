@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,26 +17,26 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class NewsActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    Adapter adapter;
-
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private String[] myDataset = {"1","2"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_news);
+        mRecyclerView = findViewById(R.id.recycler_view);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        // 상하 스크롤
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        // 좌우 스크롤
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        // 이러한 세팅을 사용해라 (고정된 사이즈 등등)
+        mRecyclerView.setHasFixedSize(true);
 
-        adapter = new Adapter();
-        for (int i=0; i < 100; i++){
-            String str = i + "번째 아이템";
-            adapter.setArrayData(str);
-        }
-        recyclerView.setAdapter(adapter);
+        // 리니어 레이아웃 메니저를 사용해라
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // 어댑터를 특정하라
+        mAdapter = new Adapter(myDataset);
+        mRecyclerView.setAdapter(mAdapter);
+
     }
-
 }
